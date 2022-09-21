@@ -1,0 +1,23 @@
+# see https://velero.io/docs/v1.3.0/api-types/schedule/
+apiVersion: velero.io/v1
+kind: Schedule
+metadata:
+  name: standard-backups
+  namespace: velero
+spec:
+  schedule: 0 7 * * *
+  template:
+    includedNamespaces:
+    - '*'
+     includedResources:
+    - '*'
+    includeClusterResources: null
+    labelSelector:
+      matchLabels:
+        app: velero
+        component: server
+    snapshotVolumes: null
+    storageLocation: default
+    volumeSnapshotLocations:
+      - default
+    ttl: 24h0m0s
