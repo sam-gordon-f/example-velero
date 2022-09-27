@@ -9,7 +9,7 @@ spec:
   template:
     includedNamespaces:
     - '*'
-     includedResources:
+    includedResources:
     - '*'
     includeClusterResources: null
     labelSelector:
